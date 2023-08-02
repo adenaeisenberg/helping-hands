@@ -5,12 +5,14 @@ Rails.application.routes.draw do
   post "/sessions" => "sessions#create"
   get "/logout" => "sessions#destroy"
 
+  get "/opportunities/:id/edit" => "opportunities#edit"
+  patch "/opportunities" => "opportunities#update"
+
   get "/opportunities/new" => "opportunities#new"
   post "/opportunities" => "opportunities#create"
 
   get "/opportunities" => "opportunities#index"
   get "/opportunities/:id" => "opportunities#show"
-  patch "/opportunities" => "opportunities#update"
   delete "/opportunities" => "opportunities#destroy"
 
   get "/users" => "users#index"
