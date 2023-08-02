@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get "/opportunites" => "opportunites#index"
+  get "/opportunites/:id" => "opportunites#show"
+  post "/opportunites" => "opportunites#create"
+  patch "/opportunites" => "opportunites#update"
+  delete "/opportunites" => "opportunites#destroy"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get "/users" => "users#index"
+  get "/users/:id" => "users#show"
+  post "/users" => "users#create"
+  patch "/users" => "users#update"
+  delete "/users" => "users#destroy"
 end
