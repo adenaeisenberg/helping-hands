@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get "/signup" => "users#new"
+  post "/users" => "users#create"
+
   get "/opportunites" => "opportunites#index"
   get "/opportunites/:id" => "opportunites#show"
   post "/opportunites" => "opportunites#create"
@@ -10,7 +13,4 @@ Rails.application.routes.draw do
   post "/users" => "users#create"
   patch "/users" => "users#update"
   delete "/users" => "users#destroy"
-
-  get "/signup" => "users#new"
-  post "/users" => "users#create"
 end
