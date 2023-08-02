@@ -1,4 +1,6 @@
 class OpportunitiesController < ApplicationController
+  before_action :authenticate_user
+
   def index
     @opportunities = Opportunity.all
     render :index
