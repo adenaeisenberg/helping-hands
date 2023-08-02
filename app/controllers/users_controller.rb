@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_admin, except: [:new, :create, :update]
+
   def new
     @user = User.new
     render template: "users/new"
@@ -45,9 +47,9 @@ class UsersController < ApplicationController
     render :show
   end
 
-  def destroy
-    @user = User.find_by(id: params[:id])
-    @user.destroy
-    render json: { message: "user lost" } #google this!!!
-  end
+  # def destroy
+  #   @user = User.find_by(id: params[:id])
+  #   @user.destroy
+  #   render json: { message: "user lost" } #google this!!!
+  # end
 end
