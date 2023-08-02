@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   post "/users" => "users#create"
   patch "/users" => "users#update"
   delete "/users" => "users#destroy"
+
+  get "/signup" => "users#new"
+  post "/users" => "users#create"
 end
