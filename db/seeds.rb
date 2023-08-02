@@ -4,8 +4,8 @@ User.create([
   { name: "Putchkie Leanord", email: "rikki@example.com", password: "password", bio: "I am super cute", dob: "September 3, 2019", phone_number: "929-098-9872" },
 ])
 
-Opportunity.create([
-  { title: "Stock food pantries", description: "Hospital pantries need to be stocked", date: "June 4 2023", user_id: 1 },
-  { title: "Garden local park", description: "Weed, seed, water with friends", date: "June 4 2023", user_id: 2 },
-  { title: "Neighborhood Watch", description: "Drive your car around the neighborhood and keep a lookout for intruders", date: "June 4 2023", user_id: 3 },
-])
+# Opportunity.create([
+#   { title: "Stock food pantries", description: "Hospital pantries need to be stocked", date: "June 4 2023", user_id: 1 },
+#   { title: "Garden local park", description: "Weed, seed, water with friends", date: "June 4 2023", user_id: 2 },
+#   { title: "Neighborhood Watch", description: "Drive your car around the neighborhood and keep a lookout for intruders", date: "June 4 2023", user_id: 3 },
+# ])
