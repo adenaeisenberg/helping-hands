@@ -11,7 +11,8 @@ class ApplicationController < ActionController::Base
 
   def authenticate_admin
     unless current_user && current_user.admin
-      render json: { Message: "You must be an admin to do this action!!" }, status: :unauthorized
+      render "users/nonadmin"
+      # status: :unauthorized
     end
   end
 end

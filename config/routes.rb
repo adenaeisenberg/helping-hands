@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   post "/sessions" => "sessions#create"
   get "/logout" => "sessions#destroy"
 
+  get "/opportunities/new" => "opportunities#new"
+  post "/opportunities" => "opportunities#create"
+
   get "/opportunities" => "opportunities#index"
   get "/opportunities/:id" => "opportunities#show"
-  post "/opportunities" => "opportunities#create"
   patch "/opportunities" => "opportunities#update"
   delete "/opportunities" => "opportunities#destroy"
 
