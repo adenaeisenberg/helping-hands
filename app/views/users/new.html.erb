@@ -28,6 +28,27 @@
       <div><%= message %></div>
     <% end %>
   </div>
+    <div>
+    <%= form.label :bio %>
+    <%= form.text_field :bio %>
+    <% @user.errors.full_messages_for(:bio).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+    <div>
+    <%= form.label :dob %>
+    <%= form.text_field :dob %>
+    <% @user.errors.full_messages_for(:dob).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+    <div>
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number %>
+    <% @user.errors.full_messages_for(:phone_number).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
   <div>
       <%= form.submit %>
   </div>

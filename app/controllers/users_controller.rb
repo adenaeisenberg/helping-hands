@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       email: params[:user][:email],
       password: params[:user][:password],
       bio: params[:user][:bio],
-      DOB: params[:user][:DOB],
+      dob: params[:user][:dob],
       phone_number: params[:user][:phone_number],
       admin: params[:user][:admin],
     )
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       email: params[:email] || @user.email,
       password: params[:password] || @user.password, #this might not work
       bio: params[:bio] || @user.bio,
-      DOB: params[:DOB] || @user.dob,
+      dob: params[:dob] || @user.dob,
       phone_number: params[:phone_number] || @user.phone_number,
       admin: params[:admin] || @user.admin, #only admin
     )
