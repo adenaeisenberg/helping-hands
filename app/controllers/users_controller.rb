@@ -18,7 +18,6 @@ class UsersController < ApplicationController
       DOB: params[:DOB],
       phone_number: params[:phone_number],
       admin: params[:admin],
-
     )
     render :show
   end
@@ -27,7 +26,7 @@ class UsersController < ApplicationController
     @user = User.update(
       name: params[:name] || @user.name,
       email: params[:email] || @user.email,
-      password: params[:password] || @user.password,
+      password: params[:password] || @user.password, #this might not work
       bio: params[:bio] || @user.bio,
       DOB: params[:DOB] || @user.dob,
       phone_number: params[:phone_number] || @user.phone_number,
