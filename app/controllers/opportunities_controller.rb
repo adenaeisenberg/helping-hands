@@ -28,15 +28,31 @@ class OpportunitiesController < ApplicationController
     render :show
   end
 
+  def edit
+    @opportunity = Opportunity.find_by(id: params[:id])
+    render :edit
+  end
+
+  # def update
+  #   @opportunity = Opportunity.find_by(id: params[:id])
+  #   @opportunity.update(
+  #     title: params[:title] || @opportunity.title,
+  #     description: params[:description] || @opportunity.description,
+  #     date: params[:date] || @opportunity.date,
+  #     # user_id: params[:user_id] || @opportunity.user_id,
+  #     status: params[:status] || @opportunity.status,
+  #   )
+  #   render :show
+  # end
+
   def update
-    @opportunity = Opportunity.update(
-      title: params[:title] || @opportunity.title,
-      description: params[:description] || @opportunity.description,
-      date: params[:date] || @opportunity.date,
-      # user_id: params[:user_id] || @opportunity.user_id,
-      status: params[:status] || @opportunity.status,
+    @opportunity = Opportunity.find_by(id: params[:id])
+    @opportunity.update(
+      title: params[:opportunity][:title],
+      description: params[:opportunity][:description],
+      date: params[:opportunity][:date],
     )
-    render :show
+    redirect_to "/opportunities"
   end
 
   def destroy
