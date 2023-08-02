@@ -1,5 +1,22 @@
 class OpportunitiesController < ApplicationController
   before_action :authenticate_user
+  before_action :authenticate_admin, except: [:new, :create, :index, :show]
+
+  def new
+    @opportunity = Opportunity.new
+    render :new
+  end
+
+  def create
+    @opportunity = Opportunity.create(
+      title: params[:opportunity][:title],
+      description: params[:opportunity][:description],
+      date: params[:opportunity][:date],
+      user_id: current_user.id,
+      status: false,
+    )
+    redirect_to "/opportunities"
+  end
 
   def index
     @opportunities = Opportunity.all
@@ -8,17 +25,6 @@ class OpportunitiesController < ApplicationController
 
   def show
     @opportunity = Opportunity.find_by(id: params[:id])
-    render :show
-  end
-
-  def create
-    @opportunity = Opportunity.create(
-      title: params[:title],
-      description: params[:description],
-      date: params[:date],
-      user_id: params[:user_id],
-      status: params[:status],
-    )
     render :show
   end
 
