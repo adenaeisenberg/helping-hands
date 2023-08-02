@@ -1,6 +1,6 @@
 class OpportunitiesController < ApplicationController
   def index
-    @opportunies = Opportunity.all
+    @opportunities = Opportunity.all
     render :index
   end
 
