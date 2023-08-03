@@ -1,7 +1,10 @@
 <h1>All Opportunities</h1>
 <% @opportunities.each do |opportunity| %>
+<% if opportunity.status == true %>
   <h2><%= opportunity.title %></h2>
   <a href="/opportunities/<%= opportunity.id %>">More info</a>
 <% end %>
+<% end %>
+
 
 <a href="/opportunities/new">Create new opportunity</a>
