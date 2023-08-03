@@ -24,18 +24,37 @@ class UsersController < ApplicationController
     end
   end
 
-  def update
-    @user = User.update(
-      name: params[:name] || @user.name,
-      email: params[:email] || @user.email,
-      password: params[:password] || @user.password, #this might not work
-      bio: params[:bio] || @user.bio,
-      dob: params[:dob] || @user.dob,
-      phone_number: params[:phone_number] || @user.phone_number,
-      admin: params[:admin] || @user.admin, #only admin
-    )
-    render :show
+  def edit
+    @user = User.find_by(id: params[:id])
+    render :edit
   end
+
+  def update
+    @user = User.find_by(id: params[:id])
+    @user.update(
+      name: params[:user][:name],
+      email: params[:user][:email],
+      password: params[:user][:password],
+      bio: params[:user][:bio],
+      dob: params[:user][:dob],
+      phone_number: params[:user][:phone_number],
+      # admin: params[:user][:admin]
+    )
+    redirect_to "/users"
+  end
+
+  # def update
+  #   @user = User.update(
+  #     name: params[:name] || @user.name,
+  #     email: params[:email] || @user.email,
+  #     password: params[:password] || @user.password, #this might not work
+  #     bio: params[:bio] || @user.bio,
+  #     dob: params[:dob] || @user.dob,
+  #     phone_number: params[:phone_number] || @user.phone_number,
+  #     admin: params[:admin] || @user.admin, #only admin
+  #   )
+  #   render :show
+  # end
 
   def index
     @users = User.all
