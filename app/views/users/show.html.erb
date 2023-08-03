@@ -2,7 +2,7 @@
 <h2><%= @user.name %></h2>
 <p>email: <%= @user.email %></p>
 <p>bio: <%= @user.bio %></p>
-<p>dob: <%= @user.dob %></p>
+<p>dob: <%= @user.dob.strftime("%B %-d, %Y") %></p>
 <p>phone number: <%= @user.phone_number %></p>
 <p>admin: <%= @user.admin %></p>
 <a href="/users">Back to all users</a>
