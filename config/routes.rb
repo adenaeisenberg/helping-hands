@@ -18,8 +18,10 @@ Rails.application.routes.draw do
   delete "/opportunities" => "opportunities#destroy"
 
   get "/users" => "users#index"
+  get "/users/:id/edit" => "users#edit"
+  patch "/users" => "users#update"
   get "/users/:id" => "users#show"
   post "/users" => "users#create"
-  patch "/users" => "users#update"
+
   # delete "/users" => "users#destroy"
 end
