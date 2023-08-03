@@ -17,11 +17,12 @@ Rails.application.routes.draw do
   get "/opportunities/:id" => "opportunities#show"
   delete "/opportunities" => "opportunities#destroy"
 
-  get "/users" => "users#index"
   get "/users/:id/edit" => "users#edit"
   patch "/users/:id" => "users#update"
+
   get "/users/:id" => "users#show"
   post "/users" => "users#create"
+  get "/users" => "users#index"
 
   # delete "/users" => "users#destroy"
 end

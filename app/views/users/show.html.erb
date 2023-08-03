@@ -5,5 +5,9 @@
 <p>dob: <%= @user.dob.strftime("%B %-d, %Y") %></p>
 <p>phone number: <%= @user.phone_number %></p>
 <p>admin: <%= @user.admin %></p>
+<a href="/users/<%= @user.id %>/edit">Edit This User</a>
+<br>
+<br>
 <a href="/users">Back to all users</a>
-<a href="/users/<%= @user.id %>/edit">Edit User</a>
+
+
